@@ -40,6 +40,8 @@
  
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/css/styleA.css" rel="stylesheet" />
+    
+
   </head>
 
   <style>
@@ -475,7 +477,7 @@ window.onclick = function(event) {
     <!-- Core theme JS-->
     <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
-    <script src="public/js/scripts.js"></script>
+<script src="/scripts/cart-management.js"></script>
     <script>
       var timeLeft = 45;
     var elem = document.getElementById('some_div');
@@ -491,6 +493,18 @@ window.onclick = function(event) {
         timeLeft--;
       }
     }
+    </script>
+       <script>
+        (function(){
+            SDKName = window.SDKName || (window.SDKName = []);
+            var s = document.createElement('script');
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = 'http://localhost:3026/sdk/sdk_version.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+    
+        })();
     </script>
   </body>
 </html>

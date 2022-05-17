@@ -18,6 +18,7 @@ const baseRoutes = require('./routes/base.routes');
 const adminRoutes = require('./routes/admin.routes');
 const cartRoutes = require('./routes/cart.routes');
 const ordersRoutes = require('./routes/orders.routes');
+const chatRoutes = require('./routes/chat.routes');
 const db = require('./data/database');
 const dummyjson = require('./dummyjson/dummy-data');
 
@@ -46,9 +47,12 @@ app.use(checkAuthStatusMiddleware);
 app.use(baseRoutes);
 app.use(authRoutes);
 app.use(productsRoutes);
-app.use('/cart', protectRoutesMiddleware, cartRoutes);
+app.use('/cart', cartRoutes);
 app.use('/orders', protectRoutesMiddleware, ordersRoutes);
 app.use('/admin', protectRoutesMiddleware, adminRoutes);
+
+//Chat
+app.use('/chat', chatRoutes);
 
 app.use(notFoundMiddleware);
 

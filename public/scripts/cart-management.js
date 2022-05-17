@@ -2,6 +2,7 @@ const addToCartButtonElement = document.querySelector('#add-to-cart');
 const cartBadgeElements = document.querySelectorAll('#panier');
 
 async function addToCart() {
+  console.log('addToCart');
   const productId = addToCartButtonElement.dataset.productid;
   const csrfToken = addToCartButtonElement.dataset.csrf;
 

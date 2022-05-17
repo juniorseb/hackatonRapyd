@@ -22,18 +22,18 @@ async function addOrder(req, res, next) {
     return next(error);
   }
 
-  //const order = new Order(cart, userDocument);
+  const order = new Order(cart, userDocument);
 
-/*   try {
+   try {
     await order.save();
   } catch (error) {
     next(error);
     return;
-  } */
+  } 
 
-  //req.session.cart = null;
+  req.session.cart = null;
 
-  res.json({order: {productData: cart, userData: userDocument}});
+  res.json({order: {productData: cart}});
 }
 
 async function buy(req, res, next) {
